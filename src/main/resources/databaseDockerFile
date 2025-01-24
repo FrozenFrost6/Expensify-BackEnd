@@ -1,0 +1,10 @@
+#!/bin/bash
+
+docker run --detach \
+  --env POSTGRES_USER=expensify-user \
+  --env POSTGRES_PASSWORD=password \
+  --env POSTGRES_DB=expensify-database \
+  --name postgres \
+  --publish 5432:5432 \
+  --volume "$(pwd)/expensifydata:/var/lib/postgresql/data" \
+  postgres:latest
