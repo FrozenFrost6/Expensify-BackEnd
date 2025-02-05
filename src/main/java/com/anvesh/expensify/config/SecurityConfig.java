@@ -26,8 +26,8 @@ public class SecurityConfig {
     	http.httpBasic(httpBasic -> {});
     	http.userDetailsService(customUserDetails);
     	http.authorizeHttpRequests(auth -> auth
-    			.requestMatchers("/users", "/expenses").authenticated()
-    			.anyRequest().permitAll()
+//    			.requestMatchers("/users", "/expenses").authenticated()
+    			.anyRequest().authenticated()
     			
     			);
 
